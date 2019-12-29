@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eurekaServices" />
+        <module name="zoolServices" />
+        <module name="zuulServices" />
+        <module name="ecukaService" />
+        <module name="userServices" />
+        <module name="customServices" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eurekaServices" target="1.8" />
+      <module name="zoolServices" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Mymaven01" options="-parameters" />
+      <module name="customServices" options="-parameters" />
+      <module name="ecukaService" options="-parameters" />
+      <module name="eurekaServices" options="-parameters" />
+      <module name="userServices" options="-parameters" />
+      <module name="zoolServices" options="-parameters" />
+      <module name="zuulServices" options="-parameters" />
+    </option>
+  </component>
+</project>

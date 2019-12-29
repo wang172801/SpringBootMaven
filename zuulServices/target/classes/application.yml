@@ -1,0 +1,39 @@
+server:
+  port: 5777
+spring:
+  application:
+    name: zuulServices
+#zuul:
+#  routes:
+#    haha:
+#      path: /userServices/**
+#      url: http://localhost:8789
+# encrka 注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:1007/eureka
+    registry-fetch-interval-seconds: 5 # 获取服务列表的周期：5s
+  instance:
+    prefer-ip-address: true # 当调用getHostname获取实例的hostname时，返回ip而不是host名称
+    ip-address: 127.0.0.1 # 指定自己的ip信息，不指定的话会自己寻找
+#    第二种
+#zuul:
+#  routes:
+#    haha:
+#      path: /userServices/**
+#      serviceId: userServices
+# 第三种
+#zuul:
+#  routes:
+#    userServices: /userServices/**
+#  ignored-services: #
+#    - customServices
+#  第四种情况
+zuul:
+  routes:
+    userServices:
+     path: /user/**
+     serviceId: userServices
+     strip-prefix: false
+  prefix: /api
